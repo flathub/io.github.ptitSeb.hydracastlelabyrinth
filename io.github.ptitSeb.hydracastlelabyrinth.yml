@@ -22,6 +22,8 @@ modules:
         x-checker-data:
           type: git
           tag-pattern: ^v([\\d.]+)$
+      - type: patch
+        path: hcl-redirect_user_data.patch
       - type: script
         dest-filename: io.github.ptitSeb.hydracastlelabyrinth.sh
         commands:

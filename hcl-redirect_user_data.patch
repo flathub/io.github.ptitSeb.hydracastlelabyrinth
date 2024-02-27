@@ -1,0 +1,57 @@
+diff --git a/src/game.c b/src/game.c
+index 89df254..65e1f68 100644
+--- a/src/game.c
++++ b/src/game.c
+@@ -258,7 +258,7 @@ void game()
+ 	#elif defined(EMSCRIPTEN)
+ 	const char* home = "hcl_data/";
+ 	#else
+-	const char* home = getenv("HOME");
++	const char* home = getenv("XDG_DATA_HOME");
+ 	#endif
+ 	if(home) 
+ 	{
+diff --git a/src/ini.c b/src/ini.c
+index 566df8c..9e2094b 100644
+--- a/src/ini.c
++++ b/src/ini.c
+@@ -32,7 +32,7 @@ void iniInit()
+ 		#elif defined(EMSCRIPTEN)
+ 		strcpy(fullPath, "hcl_data/");
+ 		#else
+-		strcpy(fullPath, getenv("HOME"));
++		strcpy(fullPath, getenv("XDG_DATA_HOME"));
+ 		strcat(fullPath, "/.hydracastlelabyrinth/");
+ 		#endif
+ 		#elif defined(_3DS)
+@@ -68,7 +68,7 @@ void saveSettings()
+ 		#elif defined(EMSCRIPTEN)
+ 		strcpy(fullPath, "hcl_data/");
+ 		#else
+-		strcpy(fullPath, getenv("HOME"));
++		strcpy(fullPath, getenv("XDG_DATA_HOME"));
+ 		strcat(fullPath, "/.hydracastlelabyrinth/");
+ 		#endif
+ 		#elif defined(_3DS)
+@@ -172,7 +172,7 @@ void loadSettings()
+ 		#elif defined(EMSCRIPTEN)
+ 		strcpy(fullPath, "hcl_data/");
+ 		#else
+-		strcpy(fullPath, getenv("HOME"));
++		strcpy(fullPath, getenv("XDG_DATA_HOME"));
+ 		strcat(fullPath, "/.hydracastlelabyrinth/");
+ 		#endif
+ 		#elif defined(_3DS)
+diff --git a/src/main.c b/src/main.c
+index 4095b2a..643c665 100644
+--- a/src/main.c
++++ b/src/main.c
+@@ -38,7 +38,7 @@ void createSaveLocations()
+ 		#elif defined(EMSCRIPTEN)
+ 		strcpy(buff, "hcl_data");
+ 		#else
+-		strcpy(buff, getenv("HOME"));
++		strcpy(buff, getenv("XDG_DATA_HOME"));
+ 		strcat(buff, "/.hydracastlelabyrinth");
+ 		#endif
+ 		// if exist first?
