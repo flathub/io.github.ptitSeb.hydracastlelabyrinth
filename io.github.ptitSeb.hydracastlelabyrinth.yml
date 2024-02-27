@@ -5,8 +5,8 @@ sdk: org.freedesktop.Sdk
 command: io.github.ptitSeb.hydracastlelabyrinth.sh
 
 finish-args:
-  # hardware 3D
-  - --device=dri
+  # hardware 3D and game controller support
+  - --device=all
   # X11 access
   - --share=ipc
   - --socket=x11
@@ -18,10 +18,12 @@ modules:
     sources:
       - type: git
         url: https://github.com/ptitSeb/hydracastlelabyrinth.git
-        commit: 6140a3a94448af04f73534019798e91f09f089c5
+        commit: 522f0b69b3565935069d51d113127424b6261bf1
         x-checker-data:
           type: git
           tag-pattern: ^v([\\d.]+)$
+      - type: patch
+        path: hcl-redirect_user_data.patch
       - type: script
         dest-filename: io.github.ptitSeb.hydracastlelabyrinth.sh
         commands:
