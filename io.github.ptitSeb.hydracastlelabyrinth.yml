@@ -5,8 +5,8 @@ sdk: org.freedesktop.Sdk
 command: io.github.ptitSeb.hydracastlelabyrinth.sh
 
 finish-args:
-  # hardware 3D
-  - --device=dri
+  # hardware 3D and game controller support
+  - --device=all
   # X11 access
   - --share=ipc
   - --socket=x11
