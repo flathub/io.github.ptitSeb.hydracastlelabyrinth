@@ -18,7 +18,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/ptitSeb/hydracastlelabyrinth.git
-        commit: 522f0b69b3565935069d51d113127424b6261bf1
+        commit: e4f725ec3f3b01bb0c52285eb3c66d68a8adebcc
         x-checker-data:
           type: git
           tag-pattern: ^v([\\d.]+)$
