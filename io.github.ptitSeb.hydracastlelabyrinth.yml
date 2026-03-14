@@ -1,6 +1,6 @@
 app-id: io.github.ptitSeb.hydracastlelabyrinth
 runtime: org.freedesktop.Platform
-runtime-version: '23.08'
+runtime-version: '25.08'
 sdk: org.freedesktop.Sdk
 command: io.github.ptitSeb.hydracastlelabyrinth.sh
 
@@ -23,7 +23,9 @@ modules:
           type: git
           tag-pattern: ^v([\\d.]+)$
       - type: patch
-        path: hcl-redirect_user_data.patch
+        paths:
+          - hcl-redirect_user_data.patch
+          - fix-appdata.patch
       - type: script
         dest-filename: io.github.ptitSeb.hydracastlelabyrinth.sh
         commands:
