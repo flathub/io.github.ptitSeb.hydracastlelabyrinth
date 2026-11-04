@@ -31,7 +31,7 @@ modules:
         commit: 229369c222f8604530f5e06f795b4505ef21d439
         x-checker-data:
           type: git
-          tag-pattern: ^v([\\d.]+)$
+          tag-pattern: ^v([\d.]+)$
       - type: patch
         paths:
           - hcl-redirect_user_data.patch
